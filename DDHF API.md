@@ -60,12 +60,29 @@ Login as "wallace"
     # sed -I .bak 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /usr/local/etc/sudoers
     # exit
 
+
 FreeBSD Hints
 =============
 You can install additional pacakages using "pkg install". For a beginner it might be easier to lookup the package names on http://www.freshports.org/
 
 The system ships with the (for the uninitiated quite scary) vi editor. If you want the improved vi then install the package "vim".
 The system also ships with a beginner friendly editor named "ee"
+
+## Testing
+
+It is often convenient to test from the commandline. Many typically use "curl -X" but I recommend using [httpie](http://httpie.org/). It works very well in a JSON world and has pretty formatting. This make debugging much easier.
+
+Install by:
+    $ sudo pkg install -y httpie
+
+Usage:
+http GET "http://127.0.0.1:8080/items"
+http GET "http://127.0.0.1:8080/items/1"
+http POST "http://127.0.0.1:8080/items?itemheadline=test&itemdescription=blahblahblah"
+http PUT "http://127.0.0.1:8080/items/16?itemheadline=Test&itemdescription=LoremIpsum"
+http DELETE "http://127.0.0.1:8080/items/7"
+
+If testing using your own browser the use a nice browser plugin to simplify your life. For Chrome I use [Postman](https://www.getpostman.com/).
 
 
 Install PostgreSQL
@@ -153,10 +170,11 @@ You can stop the web server using:
 
     $ /usr/local/openresty/nginx/sbin/nginx -p ~/ddhfapi/ -c conf/nginx.conf -s stop
 
+
+
 TODO
 ====
 - rc.conf modifications to start nginx as a service
-- Install httpie and add examples for testing
 - Add postnummer table and FK
 - Add image uploading (table and FK)
 - Add audio uploading (table and FK)
