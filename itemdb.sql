@@ -1,4 +1,4 @@
-CREATE USER itemdbuser WITH PASSWORD 'myPassword';
+﻿CREATE USER itemdbuser WITH PASSWORD 'myPassword';
 
 CREATE DATABASE itemdb WITH OWNER itemdbuser ENCODING 'UTF8';
 

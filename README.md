@@ -1,4 +1,4 @@
-Items API
+﻿Items API
 =========
 This is the very beginning of an items API for use with [DDHF](http://datamuseum.dk/)
 

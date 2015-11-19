@@ -1,4 +1,4 @@
-Overview
+﻿Overview
 ========
 1) Setup VM environment or host (ie. VMware Player)
 2) Install OS - we use FreeBSD
